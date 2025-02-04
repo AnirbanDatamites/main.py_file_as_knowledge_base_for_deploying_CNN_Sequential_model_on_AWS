@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion MNIST Classifier</title>
+</head>
+<body>
+    <h1>Upload an Image for Classification</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Predict</button>
+    </form>
+    
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 300px;">
+    {% endif %}
+</body>
+</html>
